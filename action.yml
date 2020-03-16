@@ -1,6 +1,10 @@
 name: 'LaTeX Build'
 description: 'Greet someone and record the time'
 inputs:
+  build-directory:
+    description: Paths to build.
+    required: true
+    default: './'
   build-files:
     description: A Line-separated list of paths of the TeX files to build.
     required: true
@@ -10,4 +14,5 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.build-directory }}
     - ${{ inputs.build-files }}
