@@ -1,3 +1,6 @@
 #!/bin/sh -l
 
-echo "Hello, GitHub Actions $1"
+build_files=$1
+
+echo "Build PDF"
+latexmk "$build_files"
