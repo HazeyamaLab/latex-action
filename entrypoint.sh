@@ -5,4 +5,4 @@ build_files=$2
 
 echo "Build PDF"
 cd "$build_directory"
-latexmk "$build_files"
+uplatex doc.tex && dvipdfmx doc.dvi
